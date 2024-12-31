@@ -69,7 +69,6 @@ class AuthController extends Controller
      */
     public function storeSignup(Request $request)
     {
-        Log::info($request->all());
         $validator = Validator::make($request->all(),[
             'name' => ['required','string','max:20'],
             'email' => ['required','string','email','max:50','unique:users'],
@@ -86,6 +85,12 @@ class AuthController extends Controller
                     return redirect()->route('login');
     }
 
+    /**
+     * Logout the user and invalidate the session.
+     *
+     * @param Request $request The incoming HTTP request.
+     * @return \Illuminate\Http\RedirectResponse Redirects to the login route.
+     */
     public function logout(Request $request)
     {
         Auth::logout();

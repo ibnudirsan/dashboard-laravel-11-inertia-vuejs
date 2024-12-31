@@ -17,8 +17,19 @@ const form = useForm({
 
 const errors = ref({});
 
+/**
+ * Submits the signup form to the server.
+ *
+ * @return {void}
+ */
 const submit = () => {
     form.post('/store-signup', {
+        /**
+         * Updates the errors value with the provided error.
+         *
+         * @param {Object} error - The error object to be assigned to errors.value.
+         * @return {void}
+         */
         onError: (error) => {
             errors.value = error;
         }

@@ -10,6 +10,11 @@ import { Link } from '@inertiajs/vue3'
 import { useForm } from '@inertiajs/vue3';
 
 const form = useForm({});
+/**
+ * Logs out the user by sending a POST request to the '/logout' endpoint.
+ *
+ * @return {void}
+ */
 const logout = () => {
   form.post('/logout');
 }
