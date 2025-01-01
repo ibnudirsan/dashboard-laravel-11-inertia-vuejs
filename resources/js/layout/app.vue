@@ -46,24 +46,17 @@ const logout = () => {
               Dashboard
             </Link>
             <Link
-              href="/"
-              :class="$page.url === '/' ? 'bg-muted text-primary' : 'text-muted-foreground'"
+              href="/products/list"
+              :class="$page.url === '/products' ? 'bg-muted text-primary' : 'text-muted-foreground'"
               class="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
             >
-              <ShoppingCart class="h-4 w-4" />
-              Home
+              <Package class="h-4 w-4" />
+              Products
               <Badge class="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
                 6
               </Badge>
             </Link>
-            
-            <a
-              href="#"
-              class="flex items-center gap-3 rounded-lg  px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-            >
-              <Package class="h-4 w-4" />
-              Products
-            </a>
+
             <a
               href="#"
               class="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
@@ -209,10 +202,10 @@ const logout = () => {
       <main class="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
         <div class="flex items-center">
           <h1 class="text-lg font-semibold md:text-2xl">
-            Inventory
+            <slot name="title"></slot>
           </h1>
         </div>
-        <div class="flex flex-1 items-center justify-center rounded-lg border border-dashed shadow-sm">
+        <div class="">
             <!-- Content Page -->
             <slot />
         </div>
